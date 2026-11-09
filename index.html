@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09090d">
+<title>MEDIAX — All Your Media. One Place.</title>
+<meta name="description" content="MEDIAX is your all-in-one media link detection platform.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#09090d;color:#fff;font-family:Inter,Arial,sans-serif}
+header{height:76px;border-bottom:1px solid #25252d;display:flex;align-items:center;justify-content:space-between;padding:0 7%;background:#0c0c12}
+.logo{font-size:27px;font-weight:900;letter-spacing:-1.5px}
+.logo span{color:#a78bfa}
+nav{display:flex;gap:28px}
+nav a{color:#aaa;text-decoration:none;font-size:14px}
+nav a:hover{color:white}
+.hero{text-align:center;padding:100px 20px 65px}
+.badge{display:inline-block;padding:9px 16px;border:1px solid #353044;border-radius:30px;color:#c4b5fd;font-size:12px;margin-bottom:25px}
+h1{font-size:clamp(38px,6vw,66px);letter-spacing:-3px;line-height:1.1;font-weight:850}
+h1 span{color:#a78bfa}
+.hero p{color:#9999a8;margin:22px auto;max-width:550px;line-height:1.8;font-size:15px}
+.downloader{max-width:720px;margin:38px auto 0;background:#15151e;border:1px solid #343442;border-radius:15px;padding:9px;display:flex;gap:10px}
+.downloader input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:white;padding:16px;font-size:14px}
+.downloader button{background:#8b5cf6;border:0;color:white;padding:0 27px;border-radius:9px;font-weight:700;cursor:pointer}
+.downloader button:hover{background:#7c3aed}
+#result{margin:15px auto;color:#c4b5fd;font-size:14px;max-width:700px}
+.platforms{padding:55px 7%;text-align:center}
+.section-title{font-size:25px;font-weight:750}
+.subtitle{color:#92929f;font-size:14px;margin-top:12px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px;max-width:950px;margin:35px auto}
+.card{background:#14141c;border:1px solid #292934;border-radius:13px;padding:28px 12px;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#8b5cf6}
+.icon{width:48px;height:48px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center}
+.icon svg{width:43px;height:43px}
+.card h3{font-size:15px;margin-bottom:7px}
+.card p{font-size:12px;color:#92929f}
+.info{padding:65px 7%;text-align:center;background:#101017}
+.info p{color:#9999a8;max-width:600px;margin:16px auto;line-height:1.8;font-size:14px}
+footer{padding:28px;text-align:center;color:#777;font-size:12px;border-top:1px solid #272731}
+@media(max-width:650px){
+header{padding:0 5%;height:65px}
+nav{gap:13px}nav a{font-size:12px}
+.hero{padding:75px 17px 40px}
+h1{letter-spacing:-2px}
+.downloader{flex-direction:column}
+.downloader button{padding:16px}
+.grid{grid-template-columns:repeat(2,1fr);gap:12px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">MEDIA<span>X</span></div>
+<nav>
+<a href="#platforms">Platforms</a>
+<a href="#about">About</a>
+</nav>
+</header>
+
+<main>
+<section class="hero">
+<div class="badge">✦ ALL-IN-ONE MEDIA PLATFORM</div>
+<h1>All Your Media.<br><span>One Place.</span></h1>
+<p>Paste a media link and discover available content options across supported platforms. Simple, fast and convenient.</p>
+
+<div class="downloader">
+<input id="mediaUrl" type="url" placeholder="Paste your video or media link here..." autocomplete="url">
+<button onclick="detectMedia()">Check Link →</button>
+</div>
+<div id="result" role="status" aria-live="polite"></div>
+</section>
+
+<section class="platforms" id="platforms">
+<h2 class="section-title">Supported Platforms</h2>
+<p class="subtitle">One place to access your favorite media platforms.</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">
+<svg viewBox="0 0 48 48" fill="none">
+<rect x="3" y="3" width="42" height="42" rx="13" stroke="url(#ig)" stroke-width="4"/>
+<circle cx="24" cy="24" r="10" stroke="url(#ig)" stroke-width="4"/>
+<circle cx="36" cy="12" r="2.5" fill="#E1306C"/>
+<defs><linearGradient id="ig" x1="3" y1="3" x2="45" y2="45"><stop stop-color="#FEDA75"/><stop offset=".5" stop-color="#E1306C"/><stop offset="1" stop-color="#833AB4"/></linearGradient></defs>
+</svg>
+</div>
+<h3>Instagram</h3><p>Reels · Stories · Posts</p>
+</div>
+
+<div class="card">
+<div class="icon">
+<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="23" fill="#1877F2"/><path fill="white" d="M27 44V27h6l1-7h-7v-4c0-2 1-3 3-3h4V7h-6c-7 0-9 4-9 10v3h-5v7h5v17z"/></svg>
+</div>
+<h3>Facebook</h3><p>Reels · Stories · Posts</p>
+</div>
+
+<div class="card">
+<div class="icon">
+<svg viewBox="0 0 48 48"><rect x="2" y="9" width="44" height="30" rx="9" fill="#FF0033"/><path d="M20 16L32 24L20 32V16Z" fill="white"/></svg>
+</div>
+<h3>YouTube</h3><p>Videos · Shorts</p>
+</div>
+
+<div class="card">
+<div class="icon">
+<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#A78BFA" stroke-width="3"/><path d="M4 24H44M24 4C13 15 13 33 24 44M24 4C35 15 35 33 24 44" stroke="#A78BFA" stroke-width="2"/></svg>
+</div>
+<h3>Other Websites</h3><p>Supported media links</p>
+</div>
+
+</div>
+</section>
+
+<section class="info" id="about">
+<h2 class="section-title">Media made simple.</h2>
+<p>MEDIAX brings supported media links together in one clean interface. No account required. Just paste a link and check available options.</p>
+</section>
+</main>
+
+<footer>
+© 2026 MEDIAX. All rights reserved.
+</footer>
+
+<script>
+async function detectMedia(){
+const input=document.getElementById("mediaUrl");
+const result=document.getElementById("result");
+const url=input.value.trim();
+
+if(!url){result.textContent="Please paste a valid media link.";return;}
+try{
+const parsed=new URL(url);
+if(parsed.protocol!=="https:" && parsed.protocol!=="http:")throw new Error();
+}catch{
+result.textContent="Please enter a valid HTTP or HTTPS link.";
+return;
+}
+
+result.textContent="Checking link...";
+
+const API="https://mediax-api.onrender.com";
+try{
+const response=await fetch(API+"/api/check",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({url})
+});
+if(!response.ok)throw new Error("Server response: "+response.status);
+const data=await response.json();
+result.textContent=data.platform
+?"Platform detected: "+data.platform+" ✓"
+:"Link checked. "+(data.message||"See available options.");
+}catch(error){
+result.textContent="Unable to check this link right now. Please try again later.";
+}
+}
+</script>
+
+</body>
+  </html>
